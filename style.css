@@ -1,0 +1,51 @@
+/* --- GLOBAL THEME --- */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    color: #ffffff;
+}
+
+[data-testid="stSidebar"] {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- GLASSMORPHISM CARDS --- */
+div.stButton > button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+div.stButton > button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* --- INPUT FIELDS --- */
+.stTextInput > div > div > input, .stTextArea > div > div > textarea {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- HEADERS --- */
+h1, h2, h3 {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: -webkit-linear-gradient(eee, #333);
+    -webkit-background-clip: text;
+    text-shadow: 0px 0px 20px rgba(255,255,255,0.3);
+}
+
+/* --- DATAFRAME TABLES --- */
+[data-testid="stDataFrame"] {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 10px;
+    backdrop-filter: blur(10px);
+}
