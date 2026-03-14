@@ -1,46 +1,65 @@
-# genAi_project
+# 🔮 GenAI Studio — Synthetic Data Architect
 
-A small repository demonstrating simple data generation and query utilities for HR-style sample data. This project includes modules to generate synthetic data, query it, and run a minimal application that ties the pieces together.
+> Generate realistic synthetic data from a SQL schema and query it in plain English — powered by **Gemini 2.0 Flash** and **Streamlit**.
 
-## Overview
+---
 
-- **Purpose:** Generate realistic-looking HR data for testing, experimentation, or demos and provide a simple query interface to explore that data.
-- **Core modules:** data generation, querying utilities, and a minimal application entry point.
+## ✨ Features
 
-## Files
+- **Data Generation** — Paste or upload a DDL/SQL schema and generate synthetic rows instantly
+- **AI Refinement** — Instruct the AI to tweak the generated data (e.g. *"make all salaries above 50k"*)
+- **Talk to Your Data** — Ask natural language questions; the app converts them to SQL and runs them live
+- **Creativity Slider** — Control LLM temperature for varied or realistic data output
 
-- `app.py`: Minimal application / runner that ties generation and query components together.
-- `data_generation.py`: Script and helpers to generate synthetic HR-style data (employees, departments, roles, etc.).
-- `data_query_module.py`: Utilities and functions to query the generated data.
-- `hr_schema.ddl`: DDL schema describing the database/tables used by the project.
-- `style.css`: Simple styles used by any frontend or HTML exporter included in the project.
+---
 
-## Requirements
+## 🛠️ Tech Stack
 
-- Python 3.8 or newer
-- (Optional) Create a virtual environment and install any dependencies if you add a `requirements.txt` file.
+| Layer | Technology |
+|-------|-----------|
+| **LLM** | Google Gemini 2.0 Flash |
+| **Frontend** | Streamlit |
+| **Data** | Pandas + PandasSQL |
+| **Modules** | `data_generation.py`, `data_query_module.py` |
 
-## Quick Start
+---
 
-1. (Optional) Create and activate a virtual environment:
+## 📂 Project Structure
 
-	python -m venv .venv
-	source .venv/bin/activate
+```
+├── app.py                  # Main Streamlit UI
+├── data_generation.py      # Synthetic data + refinement logic
+├── data_query_module.py    # Text-to-SQL + DataFrame execution
+├── style.css               # Custom glass UI styles
+└── README.md
+```
 
-2. Generate sample data:
+---
 
-	python data_generation.py
+## 🚀 Getting Started
 
-3. Run the app / query module (example):
+```bash
+pip install streamlit pandas google-generativeai
+streamlit run app.py
+```
 
-	python app.py
+---
 
-Adjust the exact commands based on how you wire up `app.py` and `data_generation.py`.
+## 💡 Usage
 
-## Next Steps / Suggestions
+1. **Data Generation tab** — Upload a `.sql`/`.ddl` schema or paste DDL directly → set row count → click **Generate**
+2. Use **Quick Actions** to refine the data with a plain English instruction
+3. Switch to **Talk to your data** → ask questions like *"Who has the highest salary?"*
 
-- Add a `requirements.txt` or `pyproject.toml` to list dependencies.
-- Expand `app.py` with CLI flags or a small web UI to demonstrate queries.
-- Add tests for `data_generation.py` and `data_query_module.py`.
+---
 
-If you'd like, I can add usage examples, create a `requirements.txt`, or wire `app.py` into a simple Flask/Streamlit UI — tell me which next step you prefer.
+## 📄 Example DDL
+
+```sql
+CREATE TABLE employees (
+  id INT,
+  name VARCHAR(100),
+  department VARCHAR(50),
+  salary INT
+);
+```
